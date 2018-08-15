@@ -23,5 +23,4 @@ script:
   - cmake ..
   - make
   - ./Brackets-ut-catch
-  - ./Brackets-ut-gtest
 

@@ -2,5 +2,5 @@
 
 bool bracketsVerification(std::string input){
 
-    return true;
+    return false;
 }

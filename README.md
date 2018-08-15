@@ -1,1 +1,1 @@
-https://github.com/wektor1/Brackets.git
+https://travis-ci.org/wektor1/Brackets.svg?branch=master

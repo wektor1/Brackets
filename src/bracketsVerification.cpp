@@ -18,6 +18,9 @@ void charReader(char bracket, std::stack<char> &_stack, bool &is_balanced) {
   case ')':
     is_balanced = popOperation(_stack, '(');
     break;
+  case ']':
+    is_balanced = popOperation(_stack, '[');
+    break;
   default:
     _stack.push(bracket);
     break;

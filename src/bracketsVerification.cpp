@@ -1,7 +1,7 @@
 #include "../inc/bracketsVerification.hpp"
 
 bool bracketsVerification(std::string input) {
-if(input == "{}")
-return true;
-    return false;
+  if (input == "{}" || input == "{}()")
+    return true;
+  return false;
 }

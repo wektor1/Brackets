@@ -8,10 +8,16 @@ SCENARIO("Verify if string's brackets are balanced") {
       THEN("Expect false") { REQUIRE_FALSE(bracketsVerification(s)); }
     }
   }
-  GIVEN("string \"{}\" " ){
-      std::string s{"{}"};
-      WHEN("bracketsVerificaton(s) is called"){
-          THEN("Expect true") {REQUIRE(bracketsVerification(s)); }
-      }
+  GIVEN("string \"{}\" ") {
+    std::string s{"{}"};
+    WHEN("bracketsVerificaton(s) is called") {
+      THEN("Expect true") { REQUIRE(bracketsVerification(s)); }
+    }
+  }
+  GIVEN("string \"{}()") {
+    std::string s{"{}()"};
+    WHEN("bracketsVerificaton(s) is called") {
+      THEN("Expect true") { REQUIRE(bracketsVerification(s)); }
+    }
   }
 }

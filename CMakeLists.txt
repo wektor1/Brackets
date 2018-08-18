@@ -54,14 +54,14 @@ else (UNIX)
     target_link_libraries(${PROJECT_NAME} ${PROJECT_NAME}-lib)
 endif (UNIX)
 
-#set(TEST_SRC_LIST
-#    test_gtest/main.cpp
-#    test_gtest/bracketsVerification-Tests.cpp
-#)
+set(TEST_SRC_LIST
+    test_gtest/main.cpp
+    test_gtest/bracketsVerification-Tests.cpp
+)
 
-#link_libraries(gtest)
-#add_executable(${PROJECT_NAME}-ut-gtest ${TEST_SRC_LIST})
-#target_link_libraries(${PROJECT_NAME}-ut-gtest ${PROJECT_NAME}-lib)
+link_libraries(gtest)
+add_executable(${PROJECT_NAME}-ut-gtest ${TEST_SRC_LIST})
+target_link_libraries(${PROJECT_NAME}-ut-gtest ${PROJECT_NAME}-lib)
 
 set(TEST_SRC_LIST_C
     test_catch/main.cpp

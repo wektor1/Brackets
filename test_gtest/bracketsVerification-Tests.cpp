@@ -3,6 +3,7 @@
 
 TEST(bracketsVerification, balanced) {
     EXPECT_TRUE(bracketsVerification(""));
+    EXPECT_TRUE(bracketsVerification("{}"));
 }
 
 TEST(bracketsVerification, inbalanced) {

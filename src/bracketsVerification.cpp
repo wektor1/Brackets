@@ -1,12 +1,33 @@
 #include "../inc/bracketsVerification.hpp"
+#include <iterator>
 #include <stack>
 
-bool bracketsVerification(std::string input) {
-  for (int n = 0; n < input.size(); n++) {
-    if ((input[n] == '{' && input[n + 1] != '}') ||
-        (input[n] == '(' && input[n + 1] != ')'))
-      return 0;
+char findEndBracket(std::string::iterator open_bracket) {
+  switch (*open_bracket) {
+  case '{':
+    return '}';
+  case '(':
+    return ')';
+  case '[':
+    return ']';
   }
+}
 
-  return 1;
+bool pairFinder(std::string::iterator &actual_iter,
+                const std::string::iterator &end_iter) {
+  if ((actual_iter + 1) != end_iter &&
+      *(actual_iter + 1) != findEndBracket(actual_iter))
+    pairFinder(++actual_iter, end_iter);
+  if (*(actual_iter + 1) != findEndBracket(actual_iter))
+    throw false;
+}
+
+bool bracketsVerification(std::string input) {
+  auto it = input.begin();
+  try {
+    pairFinder(it, input.end());
+  } catch (bool is_inbalanced) {
+    return is_inbalanced;
+  }
+  return true;
 }
